@@ -2,12 +2,12 @@ const Store = {
     params:{
         sid: 'mystore_',
     },
-    isObject:function(obj){
+    isObject(obj){
 
         return typeof obj === 'object' && !Array.isArray(obj) && obj !== null;
 
     },
-    getAll:function(){
+    getAll(){
         
         if(!window.localStorage) { return {}; }
         
@@ -35,7 +35,7 @@ const Store = {
         return result;
 
     },
-    getValue:function(key){
+    getValue(key){
 
         if(!window.localStorage || !key) { return {}; }
 
@@ -52,7 +52,7 @@ const Store = {
         }
 
     },
-    setValue:function(key, value){
+    setValue(key, value){
 
         if(!window.localStorage || !key || !this.isObject(value)) { return false; }
 
@@ -65,7 +65,7 @@ const Store = {
         return true;
 
     },
-    mergeValue:function(key, value){
+    mergeValue(key, value){
 
         if(!window.localStorage || !key || !this.isObject(value)) { return false; }
 
